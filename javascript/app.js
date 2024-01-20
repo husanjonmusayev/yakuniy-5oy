@@ -88,6 +88,43 @@ window.addEventListener("DOMContentLoaded", function () {
             creatMain.style.display = "flex";
           }
         });
+        regionAll.addEventListener("click", function () {
+          all.forEach((element) => {
+            if (regionAll.id == element.name.slug) {
+              creatMain.style.display = "none";
+              hero.style.display = "none";
+              moreInfo.innerHTML = `
+                      <div class="img">
+                      <button id="btnRef">Back</button>
+                      <img src="${element.flags.png}" alt="${element.flags.alt}" />
+                    </div>
+                    <div class="cardText">
+                      <div class="leftTex">
+                        <p>Nativ name: ${element.name.nativeName}</p>
+                        <p>Population: ${element.population}</p>
+                        <p>Region: ${element.region}</p>
+                        <p>Sub region: ${element.subregion}</p>
+                        <p>Capital: ${element.capital}</p>
+                      </div>
+                      <div class="rightTex">
+                        <p>Top level Domain: Lorem ipsum dolor sit amet.</p>
+                        <p>Currencies :${element.currencies}</p>
+                        <p>Languages:${element.languages}</p>
+                      </div>
+                    </div>
+                      `;
+
+              let btn = document.getElementById("btnRef");
+              btn.addEventListener("click", function () {
+                creatMain.style.display = "block";
+                creatMain.style.display = "flex";
+                hero.style.display = "none";
+                hero.style.display = "flex";
+                moreInfo.innerHTML = "";
+              });
+            }
+          });
+        });
       });
 
       let allCard = document.querySelectorAll(".colum");
