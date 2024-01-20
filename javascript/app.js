@@ -1,5 +1,4 @@
 //  defolt
-
 let all;
 let creatMain = document.getElementById("creatMain");
 let moreInfo = document.querySelector(".moreInfo");
@@ -9,13 +8,14 @@ let regin = document.querySelectorAll(".dropdown-item");
 let regionAll = document.querySelector(".regionAll");
 let mooude = document.querySelector(".mooude");
 const body = document.querySelector("body");
-const loader = document.querySelector(".loader");
+const container = document.querySelector(".container");
+const loader = document.getElementById("loader");
 
-body.style.display = "none";
+container.style.display = "none";
 
 function loaderCallback() {
   loader.style.display = "none";
-  body.style.display = "block";
+  container.style.display = "block";
 }
 
 mooude.addEventListener("click", function () {
@@ -26,8 +26,8 @@ window.addEventListener("DOMContentLoaded", function () {
   fetch("https://countries-api-v7sn.onrender.com/countries?limit=250")
     .then((respons) => respons.json())
     .then((data) => {
-      loaderCallback();
       all = data.data;
+      loaderCallback();
       all.forEach((el) => {
         creatMain.innerHTML += `
         <div class="colum" id="${el.name.slug}">
@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", function () {
         el.addEventListener("click", function () {
           all.forEach((elem) => {
             if (elem.region == el.textContent) {
-              console.log(elem.textContent);
               creatMain.style.display = "none";
               regionAll.innerHTML += `
                 <div class="colum" id="${elem.name.slug}">
@@ -66,7 +65,6 @@ window.addEventListener("DOMContentLoaded", function () {
           regionAll.innerHTML = "";
           all.forEach((elem) => {
             if (elem.region == el.textContent) {
-              console.log(elem.textContent);
               creatMain.style.display = "none";
               regionAll.innerHTML += `
                 <div class="colum" id="${elem.name.slug}">
@@ -81,6 +79,14 @@ window.addEventListener("DOMContentLoaded", function () {
               `;
             }
           });
+        });
+
+        el.addEventListener("click", function () {
+          if (el.textContent == "All") {
+            regionAll.style.display = "none";
+            creatMain.style.display = "block";
+            creatMain.style.display = "flex";
+          }
         });
       });
 

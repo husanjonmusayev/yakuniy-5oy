@@ -1,0 +1,76 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10vh;
+}
+.img {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+
+
+
+
+//    VAQT MASALASI TUFAYLI VAQTINCHA TO'HTATILDI
+
+
+
+
+
+
+
+.img a {
+  transition: all 0.5s;
+  text-decoration: none;
+  color: white;
+  width: 100px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+.img a:hover {
+  transform: scale(1.1);
+}
+.img img {
+  width: 600px;
+  height: 500px;
+}
+.test {
+  margin-top: 30vh;
+}
+.test .Javob {
+  margin: 40px 0px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.test .Javob p {
+  cursor: pointer;
+  transition: all 0.5s;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+.togrijav {
+  display: flex;
+  gap: 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+} */
